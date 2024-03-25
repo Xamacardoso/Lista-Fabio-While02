@@ -234,3 +234,60 @@ export function calc_juros_composto_parcelado(capital, taxa, tempo){
     }
     write(`Montante final: R$ ${saldo.toFixed(2)}`)
 }
+
+export function decimal_to_roman(decimal){
+    let number = decimal
+    let romano = ''
+    while(number>0){
+        if (number>=500){
+            if (number>=900 && number < 1000){
+                romano += 'CM'
+                number -= 900
+            }else{
+                romano += 'D'
+                number -= 500
+            }
+        }else if (number>=100){
+            if (number >= 400 && number < 500){
+                romano += 'CD'
+                number -= 400
+            }else{
+                romano += 'C'
+                number -= 100
+            }
+        }else if (number>=50){
+            if (number >=90 && number <100){
+                romano += 'XC'
+                number -= 90
+            }else {
+                romano += 'L'
+                number -= 50
+            }
+        }else if (number>=10){
+            if (number >= 40 && number <50){
+                romano += 'XL'
+                number -= 40
+            }else {
+                romano += 'X'
+                number -= 10
+            }
+        }else if (number>=5){
+            if (number == 9){
+                romano += 'IX'
+                number -= 9
+            }else{
+                romano += 'V'
+                number -= 5
+            }
+        }else if (number>=1){
+            if (number == 4){
+                romano += 'IV'
+                number -= 4
+            }else{
+                romano += 'I'
+                number --
+            }
+        }
+    }
+    return romano
+}

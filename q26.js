@@ -20,10 +20,10 @@ write(`
 2 = Bom
 3 = Regular
 4 = Péssimo`)
-
+    // Entrada
     write('Entrevistado n° 1: ')
     let idade = getnumber('Idade do entrevistado: ')
-    
+    // Processamento
     while (idade != -1){
         if (idade != -1){
             total_entrevistados++
@@ -42,7 +42,7 @@ write(`
             idade = getnumber('Idade do entrevistado: ')
         }
     }
-    
+    // Saída
     const resultado = `
     ========== RESULTADO ===========
     > ÓTIMO   - ${qtd_otimo} Pessoas
